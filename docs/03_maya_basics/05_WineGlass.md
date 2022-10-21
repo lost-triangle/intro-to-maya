@@ -188,7 +188,7 @@ Für den Boden verwenden wir das gleiche Material. mit <span class="shortcut">RM
 
 ### Weinglas
 
-Da das Glas Material ein komplexeres Material ist, verwenden wir das Arnold Material "aiStandard". Das Material ist in mehrere Kategorien aufgeteilt. Wir benennen das Material "glas_mat".
+Da das Glas Material ein komplexeres Material ist, verwenden wir das Material "Standard Surface". Das Material ist in mehrere Kategorien aufgeteilt. Wir benennen das Material "glas_mat".
 
 Ein Glas Material hat keine Diffuse Reflektion, also schalten wir diese aus indem wir in dem Bereich "Weight = 0" setzen.
 
@@ -212,12 +212,11 @@ Hier nochmals zur Übersicht welche Werte wir angepasst haben:
 | Weight          | 0        |
 | **Specular**    |          |
 | Weight          | 1        |
+| IOR             | 1.55     |
 | Roughness       | 0        |
-| Fresnel         | activate |
 | **Refraction**  |          |
 | Weight          | 1        |
-| IOR             | 1.55     |
-| Fresnel use IOR | activate |
+
 
 Zusätzlich müssen wir noch bei dem "wineglasshape" noch "Opaque" deaktivieren um transparente Schatten zu bekommen.
 
