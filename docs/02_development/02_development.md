@@ -7,20 +7,20 @@ sidebar_position: 0
 
 ## Animationsprojekte
 
-Eine Animation ist wie jedes andere Projekt. Mithilfe von Projekt Management kann man auch sicherstellen das die Animation fertiggestellt wird.
+Eine Animation ist wie jedes andere Projekt. Mithilfe von Projektmanagement kann man sicherstellen, dass die Animation fertiggestellt wird.
 
-Zunächst sehen wir uns Allgemeines Projekt Management an und gehen dann etwas genauer auf die von Animationsfirmen eingesetzte Animation Pipeline ein.
+Zunächst betrachten wir das allgemeine Projektmanagement und gehen dann genauer auf die von Animationsfirmen eingesetzte Animationspipeline ein.
 
 ## Aufgabe
 
-Die Kern Fragen die beantwortet sein müssen bevor man mit dem Projekt anfängt:
+Folgende Kernfragen müssen beantwortet sein, bevor man mit dem Projekt beginnt:
 
-- Name des Films / Projektname
-- Grundlegende Idee
-- Was ist das Hero Objekt
-- Welche Stilrichtung wird angestrebt (z.B. Cartoon, Realistisch, abstrakt etc.)
-- (optional) Tiefere Aussage des Films
-- (optional) Motivation warum genau diese Idee gewählt wurde
+* Wie lautet der Name des Films / des Projekts?
+* Was ist die grundlegende Idee?
+* Was ist das "Hero-Objekt"?
+* Welche Stilrichtung wird angestrebt (z. B. Cartoon, realistisch, abstrakt usw.)?
+* (optional) Gibt es eine tiefere Aussage des Films?
+* (optional) Was war die Motivation für die Wahl dieser Idee?
 
 ## Links
 
