@@ -22,3 +22,15 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
+
+/* Create a style that uses a background image that is centered and does not repeat */
+.hero--primary {
+  background-image: url("./Intro_Title.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+

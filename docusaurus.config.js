@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://introtomaya.lost-triangle.com',
   baseUrl: '/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'lost-triangle', // Usually your GitHub org/user name.
   projectName: 'docusaurus', // Usually your repo name.
   themeConfig: {
     navbar: {
@@ -14,13 +14,13 @@ module.exports = {
         src: 'img/logo.svg',
       },
       items: [
-        {to: 'docs/intro', label: 'Docs', position: 'left'},
-        {href: 'https://www.lost-triangle.com', label: 'Blog', position: 'left'},
-        // {
-        //   href: 'https://github.com/facebook/docusaurus',
-        //   label: 'GitHub',
-        //   position: 'right',
-        // },
+        {to: 'docs/intro', label: 'Kurs', position: 'left'},
+        {to: 'blog', label: 'Blog', position: 'left'},
+        {
+          href: 'https://github.com/lost-triangle/intro-to-maya',
+          label: 'GitHub',
+          position: 'right',
+        },
       ],
     },
     footer: {
@@ -35,19 +35,19 @@ module.exports = {
             },
           ],
         },
-        // {
-        //   title: 'Community',
-        //   items: [
-        //     {
-        //       label: 'Stack Overflow',
-        //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-        //     },
-        //     {
-        //       label: 'Discord',
-        //       href: 'https://discordapp.com/invite/docusaurus',
-        //     },
-        //   ],
-        // },
+        {
+          title: 'Community',
+          items: [
+            // {
+            //   label: 'Stack Overflow',
+            //   href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+            // },
+            // {
+            //   label: 'Discord',
+            //   href: 'https://discordapp.com/invite/docusaurus',
+            // },
+          ],
+        },
         {
           title: 'Social',
           items: [
@@ -57,7 +57,7 @@ module.exports = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/lost-triangle/intro-to-maya',
             },
             {
               label: 'Twitter',
@@ -66,7 +66,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Lost-Triangle. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} <a href="http://www.lost-triangle.com/">Lost-Triangle</a>. Built with Docusaurus.`,
     },
   },
   presets: [
