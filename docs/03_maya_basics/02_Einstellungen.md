@@ -24,17 +24,6 @@ Hierfür aktiviert man unter "Selection - Polygon Selection" "Center".
 
 !["Select Faces with Center" aktiviert](/03_maya_basics/images/einstellungen/PolyFaceSettings.png)
 
-## Infinite Undo aktivieren
-
-Undo (<span class="shortcut">Z</span>) ist standardmäßig auf 50 Schritte limitiert.
-Diese Zahl scheint hoch, doch viele kleine Interaktion denen man sich nicht bewusst Ist
-zählt als Schritt und oftmals möchte man mehr als 50 Schritte rückgängig machen.
-
-Maya bietet die Option eine unlimitierte Anzahl von Schritten abzuspeichern.
-Hierfür setzen wir unter "Settings / Undo" den Wert auf "Infinite".
-
-![Infinite Undo aktiviert](/03_maya_basics/images/einstellungen/undo.png)
-
 ## Autosave aktivieren
 
 Manchmal stürzt Maya einfach ab. Um möglichst wenig Arbeit zu verlieren bietet Maya eine Autosave Funktion an.
