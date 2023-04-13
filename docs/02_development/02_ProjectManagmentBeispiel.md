@@ -3,8 +3,7 @@ sidebar_position: 2
 title: 2.2 Project Management Beispiel
 ---
 
-Um die Konzepte aus dem vorhergehenden Kapitel zu konkretisieren schauen wir uns ein einfaches Beispiel aus dem Leben an.
-Bei diesem Beispiel Projekt wird das Wohnzimmer in einem Haus neu gestrichen. In dem Haus wohnen noch weitere Mitbewohner.
+Um die Konzepte aus dem vorhergehenden Kapitel zu verdeutlichen, betrachten wir ein einfaches Beispiel aus dem Alltag: Das Wohnzimmer eines Hauses soll neu gestrichen werden, in dem noch weitere Mitbewohner wohnen.
 
 ## Initialisierung Phase
 
@@ -14,16 +13,15 @@ The White Room
 
 ## Beschreibung
 
-Es soll das Wohnzimmer neu gestrichen werden.
-Falls Zeit und Geld zur Verfügung steht soll eine Bordüre aufgeklebt werden.
+Im Rahmen des Projekts soll das Wohnzimmer des Hauses neu gestrichen werden. Wenn Zeit und Budget es erlauben, soll zusätzlich eine Bordüre aufgeklebt werden.
 
 ## Erfolg
 
-Alle Wände und Decke sind gestrichen
+Alle Wände und die Decke wurden gestrichen.
 
 ## Involvierte Personen
 
-Mitbewohner, diese können für die Zeit der Renovierung das Wohnzimmer nicht verwenden.
+Mitbewohner - Während der Renovierung können die Mitbewohner das Wohnzimmer nicht nutzen.
 
 ## Benötigte Ressourcen:
 
@@ -38,7 +36,7 @@ Mitbewohner, diese können für die Zeit der Renovierung das Wohnzimmer nicht ve
 
 ## Planungsphase
 
-Für die Realisierung des Projekts wurde entschieden das Zimmer selber zu streichen.
+Es wurde beschlossen, das Zimmer selbst zu streichen, um das Projekt umzusetzen.
 
 ### Umfang mit Schätzung der benötigten Zeit
 
@@ -60,6 +58,7 @@ Bei diesem Projekt fehlt uns eine entscheidende Information um einen fixen Proje
 Sobald die erste Aufgabe, „Abmessen des Zimmers“ erledigt ist, lässt sich der Zeitplan präzisieren.
 
 Für die Aufgabe „Materialien einkaufen“ müssen wir beachten das Baumärkte Sonntags nicht geöffnet haben, daher können wir diese Aufgabe nicht an einem Sonntag durchführen.
+
 Für die Einfachheit des Projekts setzen wir hierfür zwei Tage an. 1. Tag um die Materialien zu beschaffen. 2. Tag um das Zimmer zu streichen.
 
 ### Ressourcen Plan

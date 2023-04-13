@@ -7,13 +7,13 @@ sidebar_position: 0
 
 ## Animationsprojekte
 
-Eine Animation ist wie jedes andere Projekt. Mithilfe von Projektmanagement kann man sicherstellen, dass die Animation fertiggestellt wird.
+Eine Animation ist wie jedes andere Projekt auch. Mithilfe von Projektmanagement kann man sicherstellen, dass die Animation erfolgreich abgeschlossen wird.
 
-Zunächst betrachten wir das allgemeine Projektmanagement und gehen dann genauer auf die von Animationsfirmen eingesetzte Animationspipeline ein.
+Zunächst betrachten wir das allgemeine Projektmanagement und gehen dann genauer auf die Animationspipeline ein, die von Animationsfirmen eingesetzt wird.
 
 ## Aufgabe
 
-Folgende Kernfragen müssen beantwortet sein, bevor man mit dem Projekt beginnt:
+Bevor man mit einem Projekt beginnt, müssen die folgenden Kernfragen beantwortet sein:
 
 * Wie lautet der Name des Films / des Projekts?
 * Was ist die grundlegende Idee?

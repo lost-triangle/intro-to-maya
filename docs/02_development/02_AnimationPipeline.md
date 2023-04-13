@@ -3,7 +3,7 @@ sidebar_position: 4
 title: 2.4 Animation Pipeline
 ---
 
-Um einen Animationsfilm zu produzieren, wird das Projekt in der Regel in folgende Phasen aufgeteilt:
+Für die Produktion eines Animationsfilms wird das Projekt in der Regel in folgende Phasen unterteilt:
 
 1. Development / Projekt Entwicklung
 2. Pre-Production
@@ -11,13 +11,13 @@ Um einen Animationsfilm zu produzieren, wird das Projekt in der Regel in folgend
 4. Post-Production
 5. Distribution
 
-Nach jeder Phase wird entschieden, ob es sich finanziell lohnt, in die nächste Phase überzugehen. Die meisten Projekte scheitern in der Development-Phase, da zu diesem Zeitpunkt am wenigsten Geld in das Projekt geflossen ist.
+Nach jeder Phase wird entschieden, ob es sinnvoll ist, in die nächste Phase zu investieren. Die meisten Projekte scheitern in der Entwicklungsphase, da zu diesem Zeitpunkt in der Regel am wenigsten Geld in das Projekt geflossen ist.
 
 ## Development
 
-In dieser Anfangsphase wird eine Idee entwickelt. Die Idee wird als 1-2-seitiges Treatment aufgeschrieben. Ist die Idee überzeugend, wird das Treatment in ein Drehbuch/Script umgeschrieben.
+In der Anfangsphase eines Animationsfilmprojekts wird eine Idee entwickelt und in der Regel als ein 1-2-seitiges Treatment schriftlich festgehalten. Wenn das Treatment überzeugend ist, wird es in ein Drehbuch oder Skript umgeschrieben.
 
-Das Treatment sollte insbesondere Investoren überzeugen, die den Film finanzieren. Ist die Finanzierung des Projekts gesichert, kann man in die nächste Phase übergehen.
+Das Treatment dient dazu, insbesondere Investoren von der Idee zu überzeugen und die Finanzierung des Projekts zu sichern. Sobald die Finanzierung gesichert ist, kann das Projekt in die nächste Phase übergehen.
 
 Involvierte Personen:
 
@@ -35,17 +35,15 @@ Ergebnisse:
 4. Marketing Strategie / Zielgruppe
 
 ## Pre-Production
+Nach der Entwicklung des Drehbuchs wird dieses in der Regel in ein Storyboard umgewandelt. Durch die Visualisierung der Szenen aus dem Drehbuch können die Geschichte erneut bewertet und Anpassungen an verschiedenen Handlungssträngen vorgenommen werden.
 
-Das Drehbuch wird nun in ein Storyboard umgewandelt. Durch die Visualisierung der Szenen aus dem Drehbuch kann die Geschichte erneut bewertet und an verschiedenen Handlungen Korrekturen vorgenommen werden.
+Um ein noch besseres Gefühl für den Film zu bekommen, kann das Storyboard in ein Animatic umgewandelt werden. Dabei handelt es sich um eine Animation, die die Bilder des Storyboards in der Reihenfolge zeigt, in der sie später im Film erscheinen sollen. Oft wird die Animatic auch mit einer einfachen Audiospur vertont. Falls das Budget es erlaubt, können einige Szenen auch als Pre-Visualisation animiert werden, um die Kamerafahrten besser planen zu können.
 
-Um ein noch besseres Gefühl für den Film zu bekommen, kann man das Storyboard in ein Animatic umwandeln. Dies ist eine Animation, die die Bilder des Storyboards nimmt und sie nacheinander in der Dauer zeigt, die sie später im Film haben sollten. Oftmals wird die Animatic mit einer rudimentären Audiospur vertont.
-Ist das Budget vorhanden, kann man auch einige der Szenen mit einer Pre-Visualisation animieren. Dies ist eine sehr grobe Animation mit einfachen Modellen. Insbesondere bei komplexen Szenen hilft dies, die Kamerafahrten zu planen.
+Während dieser Phase werden auch Concept Art erstellt, um sicherzustellen, dass der Film einen durchgängigen Stil hat. Dabei werden Objekte, Charaktere und Umgebungen entworfen.
 
-Es wird Concept Art erstellt, von den Objekten, Charakteren und der Umgebung. Dies stellt sicher, dass der Film einen durchgängigen Stil hat.
+Anhand des Storyboards und der Concept Art wird analysiert, welche Modelle erstellt werden müssen und wie oft sie in den verschiedenen Szenen zu sehen sind. Insbesondere Hauptcharaktere, die in vielen Szenen auftreten, bekommen besondere Aufmerksamkeit. Anschließend kann eine Liste von Assets erstellt werden, die alle für den Film benötigt werden.
 
-Mithilfe des Storyboards und der Concept Art kann man nun analysieren, welche Modelle erstellt werden müssen und wie oft sie in den verschiedenen Szenen zu sehen sind. Insbesondere Hauptcharaktere, die in vielen Shots zu sehen sind, bekommen eine besonders hohe Aufmerksamkeit. Man kann nun eine Liste von Assets erstellen, die alle für den Film erstellt werden müssen.
-
-Um die Produktion reibungslos verlaufen zu lassen, werden die Szenen in Shots aufgeteilt, und es wird ein Zeitplan / Production Schedule erstellt.
+Um eine reibungslose Produktion zu gewährleisten, werden die Szenen in Shots aufgeteilt und ein Zeitplan bzw. Produktionsplan erstellt.
 
 Involvierte Personen:
 
@@ -72,27 +70,27 @@ Die einzelnen Shots im Film werden mithilfe der CG-Produktions-Pipeline erstellt
 
 ### Modelling
 
-Zu Beginn der Modellierung werden die Modelle erstellt. Hierfür gibt es mehrere Techniken wie Spline-Modellierung, Box-Modellierung und Sculpting. Es müssen alle Objekte, die Umgebung und die Charaktere erstellt werden.
+Um mit der Modellierung zu beginnen, müssen zunächst Modelle erstellt werden. Es gibt hierfür verschiedene Techniken, wie zum Beispiel die Spline-Modellierung, die Box-Modellierung und das Sculpting. Dabei müssen alle Objekte, die Umgebung und die Charaktere erstellt werden.
 
 ### Shading and Texturing
 
-Jetzt müssen allen Modellen Materialien zugewiesen werden, um das Aussehen der Modelle zu definieren.
+Als nächstes müssen allen Modellen Materialien zugewiesen werden, um deren Aussehen zu definieren.
 
 ### Rigging
 
-Wird das Modell animiert, so wird ein Rig verwendet, um es zu animieren. Das Rig kann man sich wie ein Skelett vorstellen, es definiert in welcher Art und Weise das Objekt animiert werden kann.
+Wenn ein Modell animiert werden soll, wird ein Rig verwendet, um es zu animieren. Man kann sich das Rig wie ein Skelett vorstellen, das definiert, auf welche Art und Weise das Objekt animiert werden kann.
 
 ### Animation
 
-Die Animation wird mithilfe von Keyframes erstellt. Im Prinzip definiert man bestimmte Posen des Objekts und lässt den Computer die Zwischenbilder berechnen.
+Die Animation wird mithilfe von Keyframes erstellt. Man definiert dabei bestimmte Posen des Objekts und lässt den Computer die Zwischenbilder berechnen, um eine flüssige Animation zu erzeugen.
 
 ### Lighting
 
-Die Animation wird mit 3D Lichtern ausgeleuchtet.
+Die Animation wird mit 3D-Lichtern ausgeleuchtet. Dabei wird darauf geachtet, die Stimmung und Emotion der Szene einzufangen, um ein realistisches oder hyperrealistisches Bild zu erzeugen, das die emotionalen Aspekte der Szene unterstreicht.
 
 ### Rendering
 
-Nachdem alle Teile der Animation zusammengeführt wurden, berechnet der Computer die einzelnen Bilder der Animation.
+Nachdem alle Teile der Animation zusammengeführt wurden, berechnet der Computer die einzelnen Frames der Animation.
 
 ### Audio
 
@@ -123,7 +121,7 @@ Ergebnisse:
 
 ## Post-Production
 
-Nachdem alle Teile der Animation erstellt wurden, wird ein Production Cut erstellt, der alle Shots mit Geräuschen und Stimmen zusammenfügt. Anschließend wird dieser Farbkorrigiert und visuelle Elemente (Motion Graphics) und der Abspann werden hinzugefügt.
+Nachdem alle Teile der Animation erstellt wurden, wird ein Produktionsschnitt erstellt, der alle Szenen mit Geräuschen und Stimmen zusammenfügt. Anschließend wird der Schnitt farbkorrigiert und visuelle Elemente wie Motion Graphics und der Abspann werden hinzugefügt.
 
 Involvierte Personen:
 
@@ -139,6 +137,6 @@ Ergebnisse:
 
 ## Distribution
 
-Nachdem der Film eine endgültige Fassung hat, wird er meist über einen Distributionspartner zu den Zuschauern gebracht. Meistens gibt es den Film zuerst im Kino, dann auf DVD/Blu-Ray und später auf Streaming-Diensten.
+Nachdem der Film seine endgültige Fassung erreicht hat, wird er üblicherweise über einen Distributionspartner zu den Zuschauern gebracht. Zunächst wird der Film in der Regel im Kino gezeigt, später wird er dann auf DVD/Blu-Ray veröffentlicht und schließlich auf Streaming-Diensten verfügbar gemacht.
 
-Alternativ können Videoplattformen wie Vimeo oder YouTube verwendet werden, um den Film den Zuschauern zu präsentieren.
+Alternativ können auch Videoplattformen wie Vimeo oder YouTube genutzt werden, um den Film einem Publikum zu präsentieren.

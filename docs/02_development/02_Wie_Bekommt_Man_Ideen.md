@@ -3,15 +3,15 @@ sidebar_position: 3
 title: 2.3 Wie bekommt man Ideen?
 ---
 
-Ohne Idee kann man nicht mit seinem Filmprojekt anfangen.
-Viele Menschen zweifeln an ihrer eigenen Kreativität und glauben sie haben keine guten Ideen.
-Sie fragen sich ob Menschen geboren mit der Fähigkeit gute Ideen zu haben? Oder ob überhaupt jeder in der Lage kreativ zu denken und eine eigene Idee zu entwickeln? Und Woher kommen eigentlich Ideen?
+Ohne eine Idee ist es schwierig, mit einem Filmprojekt zu beginnen. Viele Menschen zweifeln an ihrer eigenen Kreativität und glauben, dass sie keine guten Ideen haben. Es ist jedoch wichtig zu erkennen, dass Kreativität nicht immer von alleine kommt, sondern durch verschiedene Techniken und Prozesse gefördert werden kann.
 
-Jeder Mensch ist in der Lage kreativ zu denken und gute Ideen zu produzieren. Man muss diese Fähigkeit trainieren wie ein Muskel. Wir schauen uns daher an wie man mit System Ideen produzieren kann.
+Jeder Mensch hat das Potenzial, kreativ zu denken und gute Ideen zu produzieren. Wie bei einem Muskel muss man jedoch diese Fähigkeit trainieren und regelmäßig üben, um sie zu verbessern. 
+
+Nun schauen wir uns an wie wir Ideen systematisch zu produzieren können.
 
 ## 1. Kreative Rohstoffe
 
-Wie bei allem was produziert wird braucht man zunächst Rohstoffe. Für Ideen sind das Informationen und Referenzmaterial. Damit man Informationen als Rohstoff verwenden kann muss man lediglich die Informationen Sammeln die wir in zwei Kategorien aufteilen:
+Ideenproduktion erfordert wie alles, was produziert wird, zunächst Rohstoffe. Im Falle von Ideen sind diese Rohstoffe Informationen und Referenzmaterial. Um Informationen als Rohstoff zu nutzen, muss man sie zunächst sammeln. 
 
 - Generelle Informationen: Allgemeines über alles was es gibt. Kreative Personen können sich für alles auf der Welt begeistern und sind immer nach der Suche für neue Informationen.
 - Spezifische Informationen: Genaue Details von einzelnen Objekten oder Vorgängen sammeln. Warum wurde das Objekt so gestaltet? Gibt es eine Geschichte zu dem Objekt? Was macht dieses Objekt so einzigartig?
