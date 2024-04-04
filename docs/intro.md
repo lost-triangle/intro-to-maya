@@ -28,9 +28,9 @@ Als Anfänger ist es nicht unbedingt notwendig, sofort einen neuen PC zu kaufen,
 
 Autodesk Maya läuft auf allen gängigen Betriebssystemen (Windows, Linux und macOS). Autodesk bietet verschiedene Lizenztypen an, darunter:
 
-- **30-Tage-Lizenz**: Diese ermöglicht es, Maya 30 Tage lang zu testen. Weitere Informationen dazu gibt es unter:  [http://www.autodesk.com/products/autodesk-maya/free-trial](http://www.autodesk.com/products/autodesk-maya/free-trial)
+- **30-Tage-Lizenz**: Diese ermöglicht es, Maya 30 Tage lang zu testen. Weitere Informationen dazu gibt es unter: [http://www.autodesk.com/products/autodesk-maya/free-trial](http://www.autodesk.com/products/autodesk-maya/free-trial)
 - **Studentenversion**: Diese erlaubt Studenten während ihres Studiums, Maya kostenlos für Studentenprojekte zu verwenden. Weitere Informationen dazu gibt es unter: [http://students.autodesk.com/](http://students.autodesk.com/)
-- **Maya LT**: Diese Version ist für Game Developer geeignet und hat weniger Funktionen als die vollständige Lizenz von Maya. Insbesondere fehlen Lizenzen für Render Engines, da die Game Engine als Render Engine genutzt wird. Der Preis dieser Lizenz ist dementsprechend günstiger als der der Maya-Komplettversion. Eine genaue Übersicht darüber, welche Funktionen in Maya LT nicht enthalten sind, gibt es hier:  [http://www.autodesk.com/products/maya/compare/compare-products](http://www.autodesk.com/products/maya/compare/compare-products)
+- **Maya LT**: Diese Version ist für Game Developer geeignet und hat weniger Funktionen als die vollständige Lizenz von Maya. Insbesondere fehlen Lizenzen für Render Engines, da die Game Engine als Render Engine genutzt wird. Der Preis dieser Lizenz ist dementsprechend günstiger als der der Maya-Komplettversion. Eine genaue Übersicht darüber, welche Funktionen in Maya LT nicht enthalten sind, gibt es hier: [http://www.autodesk.com/products/maya/compare/compare-products](http://www.autodesk.com/products/maya/compare/compare-products)
 - **Maya**: Diese Lizenz enthält alle Funktionen von Maya und erlaubt die kommerzielle Nutzung.
 
 #### Installation von Maya
@@ -50,7 +50,6 @@ Bei der Installation von Maya sollte man sicherstellen, dass auch Arnold mitinst
 ### Maya Plug-Ins
 
 Um mit Maya effizienter und einfacher arbeiten zu können, können Plug-Ins hinzugefügt werden.
-
 
 #### Maya Bonus Tools
 
