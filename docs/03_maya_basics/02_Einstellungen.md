@@ -35,3 +35,13 @@ Das Attribut "Interval" bestimmt wieviele Minuten vergehen sollten zwischen dem 
 Zusätzlich sollte man die Anzahl der Autosaves begrenzen, da ansonsten schnell mehrere Gigabyte an Dateien im Autosave Ordner gespeichert werden.
 
 ![Autosave aktiviert](/03_maya_basics/images/einstellungen/autosave.png)
+
+## Maya Bonus Tools
+
+Seid Version 2025 werden die "Bonus Tools" automatisch mitinstalliert. Da diese Tools nicht offiziell unterstützt werden, sind sie standardmäßig deaktiviert.
+Um sie zu aktivieren:
+Window > Settings and Preferences > Plug-in Manager
+
+Hier sucht man nach einem reiter der endet mit 'Bonus Tools/plug-ins'. Mit einem Hacken bei Loaded werden sie einmal aktiviert, mit "Auto load" werden sie beim starten von Maya automatisch geladen.
+
+![Autosave aktiviert](/03_maya_basics/images/einstellungen/ActivateBonusTools.png)
