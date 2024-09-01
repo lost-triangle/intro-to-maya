@@ -17,7 +17,8 @@ jobs:
         with:
           node-version: 22
           cache: yarn
-
+      - name: Enable Corepack
+        run: corepack enable
       - name: Install dependencies
         run: pnpm i
       - name: Build website
