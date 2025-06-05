@@ -6,9 +6,9 @@ export default defineConfig({
   integrations: [
     starlight({
       title: "Intro to Maya",
-      social: {
-        github: "https://github.com/withastro/starlight",
-      },
+      social: [
+        { icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' },
+      ],
       sidebar: [
         {
           label: "Getting Started",
