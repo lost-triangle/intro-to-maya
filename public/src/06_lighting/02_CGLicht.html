@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Neal Burger">
+
+<title>2. Grundlagen Licht</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-93902a540ec147e97c89cb6c27a8df54.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://lost-triangle.com"> 
+<span class="menu-text">lost-triangle.com</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/06_lighting/00_title.html">Lighting</a></li><li class="breadcrumb-item"><a href="../../src/06_lighting/02_CGLicht.html">CG Licht</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/01_getting_started/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Einleitung</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/02_development/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Animationsprojekte</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/02_development/project-managment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projektmanagement</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/02_development/03_ProjectManagmentBeispiel.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Projektmanagement Beispiel</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/02_development/04_Wie_Bekommt_Man_Ideen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wie bekommt man Ideen?</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/02_development/05_AnimationPipeline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Animation Pipeline</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/03_maya_basics/00_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maya Grundlagen</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/03_maya_basics/01_MayaUI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maya UI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/03_maya_basics/02_Einstellungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Einstellungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/03_maya_basics/03_KeyboardShortcuts.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Keyboard Shortcuts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/03_maya_basics/04-RenderEngines.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Render Engines</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/03_maya_basics/04_Grundlagen_3D.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grundlagen 3D</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/03_maya_basics/05_WineGlass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Wine Glass</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Modelling</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/04a_modelling-nurbs/00_modelling-nurbs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modelling mit NURBS</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/01_MayaUINurbs.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maya UI NURBS</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/02_NURBSGrundlagen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">NURBS Grundlagen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/03_CurvesGrundlagen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curves Grundlagen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/04_BezierGrundlagen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bezier Grundlagen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/05_CurveTools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curve Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/06_SurfaceTools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Surface Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/07_PraxisTisch.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Praxis Tisch</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/08_PraxisStuhl.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Praxis Stuhl</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04a_modelling-nurbs/10_Tesselation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tesselation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/04b_modelling-polygon/00_modelling-polygon.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modelling mit Polygonen</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04b_modelling-polygon/01-MayaUIPoly.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maya UI Polygon</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04b_modelling-polygon/02-PolygonGrundlagen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polygon Grundlagen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04b_modelling-polygon/03-PolygonTools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Polygon Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04b_modelling-polygon/04-DNA.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">DNA</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04b_modelling-polygon/05-Plane.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plane</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/04c_modelling-anmerkungen/04c_modelling-anmerkungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modelling Anmerkungen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/05_camera/00_camera.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Camera</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/05_camera/01_Camera.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Camera</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/05_camera/02_ArbeitenMitCameras.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arbeiten mit Cameras</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/05_camera/03_EinzelbildKomposition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Einzelbild Komposition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/05_camera/07_KameraAnimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kamera Animation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/06_lighting/00_title.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lighting</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/06_lighting/01_MayaUILights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maya UI Lights</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/06_lighting/02_CGLicht.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">CG Licht</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/06_lighting/03_GrundlagenSchatten.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grundlagen Schatten</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/06_lighting/04_GrundlagenIndirektLighting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grundlagen Indirekt Lighting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/06_lighting/05_BeleuchtungsUeberlegungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beleuchtungs Überlegungen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/06_lighting/09_TestRenderLighting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Test Render Lighting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/07_shading/00_shading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shading</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/07_shading/01_ShadingUI.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shading UI</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/07_shading/02_ShaderBasics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shader Basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/07_shading/03_MayaBasic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Maya Basic</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/07_shading/04_ArnoldShader.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Arnold Shader</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/08_animation/00_animation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Animation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/01_UIAnimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">UI Animation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/02_Grundlagen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Grundlagen</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/03_GraphEditor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Graph Editor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/04_KeyframeAnimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Keyframe Animation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/05_MotionPath.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Motion Path</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/06_ReactiveAnimation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reactive Animation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/07_ExpressionEditor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Expression Editor</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/08_animation/08_InverseKinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inverse Kinematics</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/09_rendering/00_rendering.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rendering</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/09_rendering/01_General.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">General</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/09_rendering/02_AnimationEinstellungen.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Animation Einstellungen</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/10_appendix/00a_anhang.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anhang</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/10_appendix/01_Scripting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Scripting</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/10_appendix/02-Resources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Resources</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/10_appendix/05-NonArnoldLights.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Non Arnold Lights</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/10_appendix/07-Shading.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Shading</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../src/11_submission/b_abgabe.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Abgabe</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../src/11_submission/checklist.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Checkliste</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02_CGLicht.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="02_CGLicht.epub"><i class="bi bi-file"></i>ePub</a></li></ul></div></div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../src/06_lighting/00_title.html">Lighting</a></li><li class="breadcrumb-item"><a href="../../src/06_lighting/02_CGLicht.html">CG Licht</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">2. Grundlagen Licht</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In der Realität werden unzählige Photonen aus einer Lichtquelle in die Umgebung geschickt. Diese werden durch die Oberflächen reflektiert, gestreuut und abgelenkt.</p>
+<p>Im 3D Raum wird eine vereinfachte Simulation von Licht gemacht. Von Lichtquellen werden Rays ausgesendet und nach einer bestimmten Anzahl von Brechungen/Reflektionen wird die Berechnung abgebrochen.</p>
+<p>Desweiteren imitieren 3D Lichter nur Aspekte von Licht aus der Realität. Man unterscheidet zwischen direkter und indirekter Beleuchtung.</p>
+<ul>
+<li>Direkte Beleuchtung, ist wenn eine Lichtquelle ein Objekt direkt Beleuchtet. Man redet hier von “Spotlights”, Area Lights etc.</li>
+<li>Indirekte Beleuchtung, ist wenn eine beleuchtete Oberfläche eine weitere Oberflächen beleuchtet. Indirekte Beleuchtung wird auch “Global Illumination”, “Final Gathering” etc. genannt.</li>
+</ul>
+<section id="standard-licht-typen" class="level2">
+<h2 class="anchored" data-anchor-id="standard-licht-typen">Standard Licht Typen</h2>
+<p>Die Standard Licht Typen kann man im Allgemeinen für alle Renderer verwenden und sind nicht Arnold spezifisch. Wir werden uns jedoch nur die Arnold unterstützen Lichttypen betrachten. <em>(Siehe Anhang für weitere Lichter)</em></p>
+<p>Man erstellt die Lichter über das Menü <span class="menu">Create &gt; Lights</span> oder über die Shelf Rendering.</p>
+<p>Jedes Licht hat sein eigenes “Light Icon”. Die Lichtquelle selbst wird nicht ausgerendert und ist meist auch nicht in der Re</p>
+</section>
+<section id="point-light" class="level2">
+<h2 class="anchored" data-anchor-id="point-light">Point Light</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/PointLightExample1Maya.png" class="img-fluid figure-img"></p>
+<figcaption>Point Light Icon</figcaption>
+</figure>
+</div>
+<p>Die Lichtquelle vom Point Light ist ein einzelner Punkt und Licht strahlt von dem Punkt aus in alle Richtungen. Im Prinzip simuliert es ein Licht von einer Glühbirne oder einer Kerze.</p>
+<p>Nur die Position des Lichts spielt eine Rolle. Da das Licht von einem Punkt in alle Richtungen ausgestrahlt wird haben Rotation und Skalierung keine Wirkung auf das Licht.</p>
+<p>Die Schattenberechnung von Point Lights ist sehr aufwendig. Daher sollte man Point Lights eher spärlich einsetzen und nur dann wenn man sie wirklich benötigt. Zusätzlich muss man bei der Verwendung von Point Lights achten, das die Hotspots vermieden werden (unnatürlich Helle stellen). Diese entstehen wenn das Licht zu nah an einer Oberfläche ist.</p>
+<p>Eine gute Verwendung von einem Point Light ist wenn man eine eine Kerze auf dem Tisch simulieren möchte und man klar die Schatten des Lichts sehen kann. Doch in den meisten Fällen, wie eine Glühbirne die von der Decke hängt, kann man das Licht auch mithilfe eines Spotlights simulieren.</p>
+<p>Das Point Light erzeugt harte Schatten.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/PointLightexample1.png" class="img-fluid figure-img"></p>
+<figcaption>Point Light</figcaption>
+</figure>
+</div>
+<section id="directional-light" class="level3">
+<h3 class="anchored" data-anchor-id="directional-light">Directional Light</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/DirectionalLightExampleMaya.png" class="img-fluid figure-img"></p>
+<figcaption>Directional Light Icon</figcaption>
+</figure>
+</div>
+<p>Ein Directional Light simuliert parallel verlaufende Lichtstrahlen. Diesen Effect bekommt man nur von einer Lichtquelle die sehr stark ist und sehr weit entfernt ist. Im Prinzip simuliert es Sonnenlicht.</p>
+<p>Das Licht füllt den gesamten 3D Raum mit Licht. Die Position und die Skalierung des Lichts spielen keine Rolle. Nur die Rotation des Light-Icons hat einen Einfluss auf das Licht.</p>
+<p>Möchte man ein Fenster simulieren, wo die Sonne durch das Fenster scheint, muss man die Schatten des Directional Lights aktivieren, ansonsten wird der gesamte Innenbereich des Zimmers auch beleuchtet. Meistens benutzt man das Directional Light als “Fill-Light” zu verwenden um die dunkelen Teile der Szene aufzuellen.</p>
+<p>Das Directional Light erzeugt harte Schatten. Je kleiner der Winkel des Lichts zu der Oberfläche werden die Schatten länger und dramatischer.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/DirectionalLightExample.png" class="img-fluid figure-img"></p>
+<figcaption>Directional Light</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="spot-light" class="level2">
+<h2 class="anchored" data-anchor-id="spot-light">Spot Light</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/SpotLightExampleMaya.png" class="img-fluid figure-img"></p>
+<figcaption>Spot Light</figcaption>
+</figure>
+</div>
+<p>Die Lichtquelle vom Spot Light ist ein einzelner Punkt und Licht strahlt von dem Punkt aus durch einen Kegel in eine bestimmte Richtung. Das Licht imitiert das Licht von einer Spotbeleuchtung wie man sie aus der Filmproduktion/Theater kennt (bzw. das Licht eienr Taschenlampe, oder Autoscheinwerfer).</p>
+<p>Positionierung und Rotation haben einen Einfluss auf das Licht. Darüber hinaus kann man den Öffnungswinkel über das Cone Angle Attribut verändern um einen größeren/kleineren Bereich zu beleuchten.</p>
+<p>Beleuchtet ein Spotlight eine Oberfläche, so sieht man eine unnatürlich scharfe Kante zwischen dem Teil der Beleuchtet wird und dem unbeleuchteten Teil.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/SpotLightNoPrenumbra.jpg" class="img-fluid figure-img"></p>
+<figcaption>Spot Light Default</figcaption>
+</figure>
+</div>
+<p>Mit dem Prenumbra Angle Attribut kann man einen Bereich definieren in dem das Licht an Intensität verliert und gleichzeitigt wirkt das Licht wesentlich natürlicher. daher sollte man in den meisten Fällen sollte dieser Wert gesetzt werden.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/SpotLightPrenumbra.jpg" class="img-fluid figure-img"></p>
+<figcaption>Prenumbra Example</figcaption>
+</figure>
+</div>
+<p>Das Spot Light erzeugt harte Schatten.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/SpotlightExample.png" class="img-fluid figure-img"></p>
+<figcaption>Spot Light, Prenumbra=10</figcaption>
+</figure>
+</div>
+</section>
+<section id="area-light" class="level2">
+<h2 class="anchored" data-anchor-id="area-light">Area Light</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/AreaLightExampleMaya.png" class="img-fluid figure-img"></p>
+<figcaption>Area Light Maya</figcaption>
+</figure>
+</div>
+<p>Ein Area Light ist eine Fläche die die Szene mit Licht bestrahlt, es ist ein diffuses Licht. Area Lights sind das äquivalent zu einer Softbox in der Photographie. Einen ähnlichen Lichteffekt haben auch z.B. Licht aus einem Fernseher, Monitor, oder Leuchtstoffröhren.</p>
+<p>Die Positionierung, Rotation und Skalierung haben einen Einfluss auf das Area Light.</p>
+<p>Eine Area Light sollte verwendet werden um ein sanftes Licht zu erzeugen. Daher muss man das Area Light immer auf eine angemessene Größe skalieren. Im Allgemeinen sollte das Area Light die gleiche Größe wie das zu beleuchtende Objekt haben, oder man orientiert sich an einer realen Softbox (z.B. 50x50, 100x100, 50x150).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/AreaLightExample.png" class="img-fluid figure-img"></p>
+<figcaption>Area Light</figcaption>
+</figure>
+</div>
+</section>
+<section id="arnold-lichter" class="level2">
+<h2 class="anchored" data-anchor-id="arnold-lichter">Arnold Lichter</h2>
+<p>Arnold bietet zusätzlich noch weitere Licht Typen an. Diese können nur von Arnold verwendet werden und nicht von einer anderen Renderengine.</p>
+<section id="ai-area-light" class="level3">
+<h3 class="anchored" data-anchor-id="ai-area-light">ai Area Light</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/ArnoldArea.png" class="img-fluid figure-img"></p>
+<figcaption>AiArea Light Maya, Circular Disk</figcaption>
+</figure>
+</div>
+<p>Das Ai Area Light erweitert das Maya Area Light mit dem Attribut “Light Shape”, mit diesem lässt sich die Form des Area Lights in eine Scheibe oder einen Zylinder (wie eine Leuchtstoffröhre) wechseln.</p>
+<p>Nachdem es ein Arnold eigenes Licht ist, werden nur die Attribute angzeigt die Arnold beachtet angezeigt.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/ArnoldAreaSettings.png" class="img-fluid figure-img"></p>
+<figcaption>AiArea Light Shape Attribut</figcaption>
+</figure>
+</div>
+</section>
+<section id="ai-skydome" class="level3">
+<h3 class="anchored" data-anchor-id="ai-skydome">ai Skydome</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/SkyShader.png" class="img-fluid figure-img"></p>
+<figcaption>AiSkydome mit Studio HDRI Bild</figcaption>
+</figure>
+</div>
+<p>Das Skydome Light ist ein Ambient Light, das ist ein Licht was die Szene allen Seiten beleuchtet. Dieses Licht wird meist im Zusammenhang mit HDRI Beleuchtung verwendet (<em>Siehe HDRI Beleuchtung</em>).</p>
+</section>
+<section id="ai-photometric" class="level3">
+<h3 class="anchored" data-anchor-id="ai-photometric">ai Photometric</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/PhotometricMaya.png" class="img-fluid figure-img"></p>
+<figcaption>Photometric Light Maya</figcaption>
+</figure>
+</div>
+<p>Lichtquellen in der Realität leuchten nicht gleichmäßig sondern haben ein Leuchtprofil (IES-Profil). Dieses Profil wird durch die Form der Lampe und den Einsatz von Reflektoren (z.B. Halogenlampen) beeinflusst.</p>
+<p>Die Hersteller von Lampen messen ihre Lampen und erstellen IES-Profile. Meist findet man das IES Profil was man braucht durch eine Google Suche.</p>
+<ul>
+<li><a href="http://www.osram.com/osram_com/tools-and-services/tools/dialux-and-relux/index.jsp">Osram</a></li>
+<li><a href="http://www.usa.lighting.philips.com/support/support/literature/photometric-data.html">Phillips</a></li>
+<li><a href="http://www.visual-3d.com/tools/PhotometricViewer/default.aspx">Visual-3D</a></li>
+<li><a href="https://renderman.pixar.com/view/DP25764">Pixar Renderman Collection</a></li>
+</ul>
+<p>Ein <strong>Photometric</strong> Light nutzt die Messdaten um die Szene zu erleuchten. Ohne Messdaten wird die Szene nur schwarz ausgerendert.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/PhotometricSettings.png" class="img-fluid figure-img"></p>
+<figcaption>Photometric File muss gesetzt sein</figcaption>
+</figure>
+</div>
+<p>Das Photometric Light wird verwendet um eine Szene möglichst Photorealistisch Rendern zu können. Insbesondere bei der Architekturvisualiserung wird darauf geachtet, das die Lichtprofile der Lampen stimmen.</p>
+<p><span class="anmerkung"> Es ist hilfreich sich seine eigene Sammlung von IES Dateien anzulegen damit man sich nicht immer wieder auf die Suche nach Profilen machen muss. </span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/PhotometricExample.png" class="img-fluid figure-img"></p>
+<figcaption>Photometric Light</figcaption>
+</figure>
+</div>
+</section>
+<section id="mesh-light" class="level3">
+<h3 class="anchored" data-anchor-id="mesh-light">Mesh Light</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/MeshLightExampleMaya.png" class="img-fluid figure-img"></p>
+<figcaption>Mesh Light Maya</figcaption>
+</figure>
+</div>
+<p>Das Mesh Light ermöglicht einen mithilfe eines Meshes die Szene zu beleuchten. Man kann somit Lichter wie Ringblitze, Neonröhren etc. simulieren.</p>
+<p>Ungleich wie die anderen Lichtquellen hat dieses Licht kein Light Icon, sondern nur die Geometrie. Auch erscheint das Licht nicht in dem Light Editor.</p>
+<p>Möchte man ein Mesh Light erzeugen, selektiert man das Objekt. Im Attribute Editor selektiert man den “Shape”-Node und setzt das Attribut <strong>Arnold-Translator = mesh_light</strong>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/MeshSettings.png" class="img-fluid figure-img"></p>
+<figcaption>Mesh Settings</figcaption>
+</figure>
+</div>
+<p>Das Objekt ist nun unsichtbar und es emittiert nur Licht. Man kann das Objekt sichtbar machen indem man “Light visible” aktiviert.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./images/GrundlagenLicht/MeshLightExample.png" class="img-fluid figure-img"></p>
+<figcaption>Photometric Light</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="kurz-übersicht" class="level1">
+<h1>Kurz Übersicht</h1>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 5%">
+<col style="width: 13%">
+<col style="width: 11%">
+<col style="width: 24%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Licht</th>
+<th>Typ</th>
+<th>Simulation</th>
+<th>Modifizierbar</th>
+<th>Nutzung</th>
+<th>Anmerkung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Point</td>
+<td>Hard Light</td>
+<td>Kerze, Glühbirne</td>
+<td>Position</td>
+<td>Wenn Radiale Schatten notwendig sind</td>
+<td>Dieses Licht wird selten eingesetzt werden, und kann meistens mit einem Spot Light ausgetauscht werden.</td>
+</tr>
+<tr class="even">
+<td>Directional</td>
+<td>Hard Light</td>
+<td>Sonne</td>
+<td>Rotation</td>
+<td>Außen Beleuchtung, Szene mit Licht fluten</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Spot Light</td>
+<td>Hard Light</td>
+<td>Scheinwerfer, Taschenlampe</td>
+<td>Rotation, Position, Cone Angle</td>
+<td>Kann vielseitig eingesetzt werden und kann viele Lichter imitieren</td>
+<td>Immer den Prenumbra Angle anpassen, ansonsten wirkt das Licht unecht.</td>
+</tr>
+<tr class="even">
+<td>Area Light</td>
+<td>Soft Light</td>
+<td>Diffuses Licht, wie von einer Softbox</td>
+<td>Rotation, Position, Scale</td>
+<td>Sanftes diffuses Licht</td>
+<td>Man sollte das Area Light so skalieren, das es so groß ist wie eine Softbox in der Realität</td>
+</tr>
+<tr class="odd">
+<td>ai Area Light</td>
+<td>Soft Light</td>
+<td>Diffuses Licht, wie von einer Softbox</td>
+<td>Rotation, Position, Scale</td>
+<td>Area Light mit der Form einer Röhre oder Scheibe</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>ai Skydome</td>
+<td>Soft/Hard Light</td>
+<td>Fotographierte Umgebung</td>
+<td>Rotation</td>
+<td>HDRI Beleuchtung</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>ai Photometric</td>
+<td>Soft/Hard Light</td>
+<td>Gemessenes Reales Licht</td>
+<td>Position, Rotation</td>
+<td>Nutzung von physikalisch korrekte Lichtprofilen</td>
+<td>Um möglichst fotorealistische / physikalisch korrekte Lichter zu rendern</td>
+</tr>
+<tr class="even">
+<td>ai Mesh Light</td>
+<td>Soft Light</td>
+<td>Neon Lampen</td>
+<td>Rotation, Position, Scale</td>
+<td>Eigene Lichtformen</td>
+<td>Man kann die Form des Lichts animieren</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute" class="level1">
+<h1>Attribute</h1>
+<section id="allgemeine-attribute" class="level2">
+<h2 class="anchored" data-anchor-id="allgemeine-attribute">Allgemeine Attribute</h2>
+<p>Diese Attribute findet man bei allen Lichtern wieder.</p>
+<section id="color" class="level3">
+<h3 class="anchored" data-anchor-id="color">Color</h3>
+<p>Alle Lichter haben als Standardwert die Farbe weiß.</p>
+<p>In der Natur gibt es eigentlich kein Licht was reines weiß emittiert. Sonnenlicht ist wenn es auf der Erde eintrifft je nach Tageszeit, rötlich oder bläulich. Künstliche Lichter wie Florescente Lampen erscheinen blau und Glühbirnen haben einen gelblichen Ton.</p>
+<p>Die Farbe des Lichtes sollte eigentlich immer angepasst werden um ein realistischeres Bild zu erhalten. <span class="anmerkung">(Oft benutzt man eine Farbtemperatur -&gt; Siehe Arnold Color Temperature)</span></p>
+</section>
+<section id="intensity" class="level3">
+<h3 class="anchored" data-anchor-id="intensity">Intensity</h3>
+<p>Dies bestimmt die Lichtstärke des Lichts an der Lichtquelle. Die Intensität des Lichts an der Oberfläche des Objekts wird errechnet mit der Decay Rate und dem Abstand von dem Objekt zum Licht.</p>
+<p>Für Arnold ist es besser wenn man diesen Wert bei 1 belässt und stattdessen das Arnold Exponent Attribut verwendet.</p>
+</section>
+<section id="decay-rate" class="level3">
+<h3 class="anchored" data-anchor-id="decay-rate">Decay Rate</h3>
+<p>Die Decay Rate definiert den Abfall der Licht-Intensität von Lampen. Die Intensität berechnet sich an jedem Punkt mit Intensity = 1/Distanz^(Faktor). In der Realität haben die Lichter eine quadratische Abfall Rate (Faktor=2).</p>
+<p>Benutzt man keine Decay Rate (Faktor=0), so ist die Licht-Intensität gleich stark, unabhängig vom Abstand des Objekts zum Licht. (Nicht von Arnold unterstüzt)</p>
+<p>Das Licht wirkt unnatürlich wenn es keine Decay Rate verwendet. Früher hat man eine vereinfachte lineare Decay Rate verwendet (Faktor = 1) um Rechenzeit zu sparen. Maya bietet zusätzlich die Cubic Decay Rate (Faktor=3) an. Diese lässt die Licht-Intensität schneller abfallen als in der Realität und wird nur in seltenen Fällen verwendet. (Nicht von Arnold unterstüzt).</p>
+<p>Dieses Attribut wird von Arnold nicht beachtet, stattdessen hat Arnold sein eigenes Decay Rate Attribut.</p>
+</section>
+</section>
+<section id="illuminates-by-default" class="level2">
+<h2 class="anchored" data-anchor-id="illuminates-by-default">Illuminates by Default</h2>
+<p>Das ist ein einfacher an/aus Schalter für das Licht. Man verwendet ihn damit man den Effekt von den anderen Lichtern besser sehen kann.</p>
+</section>
+<section id="emit-diffuse-emit-specular" class="level2">
+<h2 class="anchored" data-anchor-id="emit-diffuse-emit-specular">Emit Diffuse &amp; Emit Specular</h2>
+<p>Lichter in Maya können getrennt die Diffuse Reflektion und für die Specular Reflektion beinflussen. In manchen Fällen möchte man diese beiden Effekte voneinander trennen, da z.B. die Specular Reflektion einen unerwünschten Effekt hat. Oder man möchte zwei getrennte Lichter definieren die für den jeweiligen Effekt sorgen.</p>
+<p>Arnold hat seine Eigene Steuerung der Licht Render Eigenschaften (<em>Siehe Diffuse &amp; Specular &amp; SSS &amp; Indirect &amp; Volume</em>)</p>
+</section>
+<section id="arnold-attribute" class="level2">
+<h2 class="anchored" data-anchor-id="arnold-attribute">Arnold Attribute</h2>
+<p>Nicht alle Attribute haben einen Effekt auf die Render Engine. Man muss sich immer mit der jeweiligen Render Engine auseinandersetzen welche Attribute überhaupt eine Wirkung zeigen. Arnold unterstützt z.B. keine Depth Map Shadows.</p>
+<p>Zusätzlich kann es passieren das die Renderengine die Maya Attribute mit seinen eigenen überschreibt. Arnold überschreibt z.B. die Decay Rate und Shadow Einstellungen.</p>
+<section id="color-temperature" class="level3">
+<h3 class="anchored" data-anchor-id="color-temperature">Color Temperature</h3>
+<p>In der Physik ist ein “Blackbody” (schwarzer Körper) definiert als idealisierter Körper der jedes Licht (bzw. elektromagnetische Strahlung) vollständig absorbiert. Erhitzt man den Körper kann er auch Strahlung aussenden und man kann durch Temperatur das gesamte sichtbare Farbspektrum abbilden.</p>
+<p>Jede reale Lichtquelle hat ihre eigene Temperatur z.B. eine Glühbirne 2800K (gelblich), Tageslicht 5500K, bedeckter Himmel 6500K -7500K (bläulich).</p>
+<p>Möchte man eine bestimmte Lichtquelle simulieren, braucht man nur googlen welche Farbtemperatur die Lichtquelle hat und kann diese verwenden.</p>
+<p>Es ist einfacher eine Color Temperature zu setzen als das Color Attribut zu definieren was nur subtil das Licht färbt.</p>
+</section>
+<section id="exposure" class="level3">
+<h3 class="anchored" data-anchor-id="exposure">Exposure</h3>
+<p>Durch die Decay Rate muss der Wert Intensity sehr groß sein um die Szene zu erleuchten. Arnold löst dieses Problem indem es die Lichtintensität über die Formel</p>
+<pre><code>color * intensity * 2^exposure</code></pre>
+<p>bestimmt.</p>
+<p>In der Praxis kann man intuitiver und genauer die Intensität bestimmen durch verändern des Exposure Attributs.</p>
+</section>
+<section id="samples" class="level3">
+<h3 class="anchored" data-anchor-id="samples">Samples</h3>
+<p>Mit dem Samples Attribut kann man die Renderqualiät verbessern. (<em>Siehe Fixing Noise</em>)</p>
+</section>
+<section id="diffuse-specular-sss-indirect-volume" class="level3">
+<h3 class="anchored" data-anchor-id="diffuse-specular-sss-indirect-volume">Diffuse &amp; Specular &amp; SSS &amp; Indirect &amp; Volume</h3>
+<p>Ähnlich wie die Maya Attribute “Emit Specular” &amp; “Emit Diffuse” kann man hier modifizieren was das Licht beleuchtet Anstatt einem an/aus Schalter, kann man hier eine Gewichtung für das jeweilige Attribut setzen.</p>
+<p>So kann man z.B. Specular auf 0.5 setzen damit die Glanzpunkte weniger hell sind.</p>
+</section>
+</section>
+<section id="spot-light-attribute" class="level2">
+<h2 class="anchored" data-anchor-id="spot-light-attribute">Spot Light Attribute</h2>
+<section id="prenumbra" class="level3">
+<h3 class="anchored" data-anchor-id="prenumbra">Prenumbra</h3>
+</section>
+<section id="dropoff" class="level3">
+<h3 class="anchored" data-anchor-id="dropoff">Dropoff</h3>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/lost-triangle\.github\.io\/intro-to-maya\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
