@@ -18,7 +18,6 @@ project:
   # To autogenerate a Table of Contents, run "myst init --write-toc"
 site:
   template: book-theme
-  base_url: https://introtomaya.lost-triangle.com
   options:
     folders: true
   actions:
