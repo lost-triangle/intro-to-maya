@@ -1,66 +1,11 @@
 # macOS
 .DS_Store
 
-# Quarto / generated site
-_book/
-_site/
-_site_libs/
-.quarto/
-_cache/
+# MyST build outputs
+_build/
 
-# Quarto user files
-_quarto.yml.user
+# Python cache files (if using Jupyter/MyST stack)
+__pycache__/
+*.pyc
 
-# Jupyter
-.ipynb_checkpoints/
-
-# R
-.Rhistory
-.RData
-.Ruserdata
-.Rproj.user/
-
-# Python virtualenvs
-venv/
-.env/
-.venv/
-
-# Node
 node_modules/
-
-# Common build / temp
-dist/
-build/
-*.log
-*.aux
-*.out
-*.toc
-.sass-cache/
-.cache/
-
-# Editors/IDEs
-.vscode/
-.idea/
-*.sublime-project
-*.sublime-workspace
-
-# Thumbnails / system
-Thumbs.db
-ehthumbs.db
-
-# Coverage
-coverage/
-*.cover
-
-# Misc
-*.bak
-*.tmp
-~*
-
-# If you generate PDFs or other binary outputs, consider ignoring them too:
-# *.pdf
-# *.zip
-# *.tar.gz
-
-/.quarto/
-**/*.quarto_ipynb
