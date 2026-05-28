@@ -27,7 +27,7 @@ site:
     primary_sidebar_footer: _site/primary-sidebar-footer.md
   nav:
     - title: Home
-      url: 'https://introtomaya.lost-triangle.com/'
+      url: '/'
 
   # options:
   #   favicon: favicon.ico
