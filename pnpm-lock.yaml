@@ -1,0 +1,23 @@
+lockfileVersion: '9.0'
+
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
+importers:
+
+  .:
+    devDependencies:
+      mystmd:
+        specifier: ^1.9.1
+        version: 1.9.1
+
+packages:
+
+  mystmd@1.9.1:
+    resolution: {integrity: sha512-ya8u48V7Hn2EtE6DJTEtrWCZEnpIboiN5Ed6lDlvMikiSk8NHUxpocR2okf3BF8vNlC7Auj5s3T/Ulj3taN6bQ==}
+    hasBin: true
+
+snapshots:
+
+  mystmd@1.9.1: {}

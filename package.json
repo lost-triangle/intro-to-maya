@@ -1,0 +1,19 @@
+{
+  "name": "mystmd-quickstart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "myst start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "pnpm build:pdf",
+    "build:pdf": "myst build --pdf"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@11.4.0",
+  "devDependencies": {
+    "mystmd": "^1.9.1"
+  }
+}
